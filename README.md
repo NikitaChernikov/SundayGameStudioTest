@@ -1,0 +1,2 @@
+# SundayGameStudioTest
+Second task variants.
