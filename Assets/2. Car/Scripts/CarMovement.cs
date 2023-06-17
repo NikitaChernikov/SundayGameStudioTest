@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(CarInputHandler))]
 public class CarMovement : MonoBehaviour
 {
+    public event EventHandler<OnChangeVisualWheelsEventArgs> OnChangeVisualWheels;
+
     [SerializeField] private AxleInfo[] axleInfos;
     [SerializeField] private float _maxMotorTorque;
     [SerializeField] private float _maxSteeringAngle;
@@ -27,8 +29,8 @@ public class CarMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float motor = _maxMotorTorque * _carInput.GetVerticalInput(); 
-        float steering = _maxSteeringAngle * _carInput.GetHorizontalInput(); 
+        float motor = _maxMotorTorque * _carInput.GetVerticalInput();
+        float steering = _maxSteeringAngle * _carInput.GetHorizontalInput();
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.isSteering)
@@ -51,23 +53,19 @@ public class CarMovement : MonoBehaviour
                 axleInfo.LeftWheel.brakeTorque = 0;
                 axleInfo.RightWheel.brakeTorque = 0;
             }
-            ChangeWheelsVisual(axleInfo.LeftWheel);
-            ChangeWheelsVisual(axleInfo.RightWheel);
+            OnChangeVisualWheels?.Invoke(this, new OnChangeVisualWheelsEventArgs
+            {
+                LeftWheel = axleInfo.LeftWheel,
+                RightWheel = axleInfo.RightWheel
+            });
+            //ChangeWheelsVisual(axleInfo.LeftWheel);
+            //ChangeWheelsVisual(axleInfo.RightWheel);
         }
     }
+}
 
-    private void ChangeWheelsVisual(WheelCollider collider)
-    {
-        if (collider.transform.childCount == 0)
-        {
-            return;
-        }
-        Transform visualWheel = collider.transform.GetChild(0);
-        Vector3 position;
-        Quaternion rotation;
-        collider.GetWorldPose(out position, out rotation);
-        visualWheel.transform.position = Vector3.Lerp(visualWheel.transform.position,position, 0.1f);
-        visualWheel.transform.rotation = Quaternion.Lerp(visualWheel.transform.rotation, rotation, 0.1f);
-
-    }
+public class OnChangeVisualWheelsEventArgs : EventArgs
+{
+    public WheelCollider LeftWheel;
+    public WheelCollider RightWheel;
 }
