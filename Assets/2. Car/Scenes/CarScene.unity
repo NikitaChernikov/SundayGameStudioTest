@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 164900464}
   - component: {fileID: 164900463}
   - component: {fileID: 164900462}
+  - component: {fileID: 164900465}
   m_Layer: 5
   m_Name: MoveBackwardButton
   m_TagString: Untagged
@@ -422,6 +423,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164900460}
   m_CullTransparentMesh: 1
+--- !u!114 &164900465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164900460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetVerticalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetVerticalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &167829364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,6 +1848,7 @@ GameObject:
   - component: {fileID: 1402222261}
   - component: {fileID: 1402222260}
   - component: {fileID: 1402222259}
+  - component: {fileID: 1402222262}
   m_Layer: 5
   m_Name: TurnRightButton
   m_TagString: Untagged
@@ -1912,6 +1959,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402222257}
   m_CullTransparentMesh: 1
+--- !u!114 &1402222262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402222257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetHorizontalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetHorizontalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!54 &1523474664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2205,6 +2297,7 @@ GameObject:
   - component: {fileID: 1690229886}
   - component: {fileID: 1690229885}
   - component: {fileID: 1690229884}
+  - component: {fileID: 1690229887}
   m_Layer: 5
   m_Name: MoveForwardButton
   m_TagString: Untagged
@@ -2315,6 +2408,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690229882}
   m_CullTransparentMesh: 1
+--- !u!114 &1690229887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690229882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetVerticalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetVerticalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1940227630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2545,7 @@ GameObject:
   - component: {fileID: 1994070156}
   - component: {fileID: 1994070155}
   - component: {fileID: 1994070154}
+  - component: {fileID: 1994070157}
   m_Layer: 5
   m_Name: TurnLeftButton
   m_TagString: Untagged
@@ -2517,6 +2656,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994070152}
   m_CullTransparentMesh: 1
+--- !u!114 &1994070157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994070152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetHorizontalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetHorizontalInput
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2086844302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,6 +2713,7 @@ GameObject:
   - component: {fileID: 2086844306}
   - component: {fileID: 2086844305}
   - component: {fileID: 2086844304}
+  - component: {fileID: 2086844307}
   m_Layer: 5
   m_Name: BrakeButton
   m_TagString: Untagged
@@ -2639,6 +2824,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086844302}
   m_CullTransparentMesh: 1
+--- !u!114 &2086844307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086844302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetBreakState
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1880317207057638274}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: SetBreakState
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &391397313950252383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,8 +2963,10 @@ GameObject:
   - component: {fileID: 1880317207057638273}
   - component: {fileID: 1523474665}
   - component: {fileID: 1523474664}
+  - component: {fileID: 1880317207057638274}
+  - component: {fileID: 1880317207057638275}
   m_Layer: 0
-  m_Name: Free Racing Car
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2777,6 +3009,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880317207057638274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248598966565206331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe8293620ce7c347aa3ece96f2b7ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1880317207057638275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248598966565206331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909cc3c6e1c73e44eb7279fc96d22d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axleInfos:
+  - LeftWheel: {fileID: 957640728}
+    RightWheel: {fileID: 1149658094}
+    isConnectedToMotor: 1
+    isSteering: 1
+  - LeftWheel: {fileID: 955224481}
+    RightWheel: {fileID: 1547759476}
+    isConnectedToMotor: 1
+    isSteering: 0
+  _maxMotorTorque: 1000
+  _maxSteeringAngle: 45
+  _breakForce: 20000
+  _carCenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!33 &2292415221147031366
 MeshFilter:
   m_ObjectHideFlags: 0
