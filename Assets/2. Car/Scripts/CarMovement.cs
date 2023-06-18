@@ -29,8 +29,8 @@ public class CarMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float motor = _maxMotorTorque * _carInput.GetVerticalInput();
-        float steering = _maxSteeringAngle * _carInput.GetHorizontalInput();
+        float motor = _maxMotorTorque * _carInput.VerticalInput;
+        float steering = _maxSteeringAngle * _carInput.HorizontalInput;
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.isSteering)
@@ -43,7 +43,7 @@ public class CarMovement : MonoBehaviour
                 axleInfo.LeftWheel.motorTorque = motor; //здесь в зависимости от локальных координат выбираем - или +
                 axleInfo.RightWheel.motorTorque = motor;  //здесь в зависимости от локальных координат выбираем - или +              
             }
-            if (_carInput.GetBreakState())
+            if (_carInput.BreakState)
             {
                 axleInfo.LeftWheel.brakeTorque = _breakForce;
                 axleInfo.RightWheel.brakeTorque = _breakForce;

@@ -6,34 +6,22 @@ public class CarInputHandler : MonoBehaviour
     private int _horizontalInput;
     private bool _isBreak;
 
-    public void SetVerticalInput(int moveInput)
+    public int VerticalInput
     {
-        _verticalInput = moveInput;
+        set { _verticalInput = value; }
+        get { return _verticalInput; }
     }
 
-    public void SetHorizontalInput(int moveInput)
+    public int HorizontalInput
     {
-        _horizontalInput = moveInput;
+        set { _horizontalInput = value; }
+        get { return _horizontalInput; }
     }
 
-    public void SetBreakState(bool isBreak)
+    public bool BreakState
     {
-        _isBreak = isBreak;
-    }
-
-    public int GetVerticalInput()
-    {
-        return _verticalInput;
-    }
-
-    public int GetHorizontalInput()
-    {
-        return _horizontalInput;
-    }
-
-    public bool GetBreakState()
-    {
-        return _isBreak;
+        set { _isBreak = value; }
+        get { return _isBreak; }
     }
     
 }
