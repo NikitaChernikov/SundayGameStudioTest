@@ -8,7 +8,6 @@ public class ShootingVisual : MonoBehaviour
     [SerializeField] private GameObject _bloodPrefab;
     [SerializeField] private PlayerShoot _playerShoot;
 
-    private float _flashDeactivationTime = 0.1f;
     private float _bloodDeactivationTime = 5f;
 
     private void OnEnable()
@@ -40,15 +39,8 @@ public class ShootingVisual : MonoBehaviour
         }
     }
 
-    private void PlayerShoot_OnShoot(object sender, System.EventArgs e)
+    private void PlayerShoot_OnShoot(object sender, OnShootEventArgs e)
     {
-        StartCoroutine(ShowFlashEffect());
-    }
-
-    private IEnumerator ShowFlashEffect()
-    {
-        _muzzleFlashPrefab.SetActive(true);
-        yield return new WaitForSeconds(_flashDeactivationTime);
-        _muzzleFlashPrefab.SetActive(false);
+        _muzzleFlashPrefab.SetActive(e.IsShooting);
     }
 }

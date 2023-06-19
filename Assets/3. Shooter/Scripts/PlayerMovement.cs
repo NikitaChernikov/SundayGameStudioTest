@@ -4,8 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    public event EventHandler OnStartMoving;
-    public event EventHandler OnStopMoving;
+    public event EventHandler<OnMoveEventArgs> OnMove;
     public event EventHandler OnJumped;
 
     [SerializeField] private Joystick _joystick;
@@ -31,11 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (_direction.magnitude >= 0.1f)
         {
-            OnStartMoving?.Invoke(this, EventArgs.Empty);
+            OnMove?.Invoke(this, new OnMoveEventArgs { IsMoving = true});
         }
         else
         {
-            OnStopMoving?.Invoke(this, EventArgs.Empty);
+            OnMove?.Invoke(this, new OnMoveEventArgs { IsMoving = false });
         }
     }
 
@@ -49,17 +48,18 @@ public class PlayerMovement : MonoBehaviour
         if (_isGrounded)
         {
             _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+            OnJumped?.Invoke(this, EventArgs.Empty);
+            _isGrounded = false;
         }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        _isGrounded = false;
-        OnJumped?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         _isGrounded = true;
     }
+}
+
+public class OnMoveEventArgs : EventArgs
+{
+    public bool IsMoving;
 }
