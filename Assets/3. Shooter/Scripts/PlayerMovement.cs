@@ -4,16 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    public event EventHandler OnStartMovingAnimation;
-    public event EventHandler OnStartIdleAnimation;
+    public event EventHandler OnStartMoving;
+    public event EventHandler OnStopMoving;
+    public event EventHandler OnJumped;
 
     [SerializeField] private Joystick _joystick;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _jumpForce;
-    [SerializeField] private GroundChekcer _groundChecker;
 
     private Rigidbody _rigidbody;
     private Vector3 _direction;
+    private bool _isGrounded;
 
     private void Awake()
     {
@@ -25,15 +26,16 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = _joystick.Horizontal;
         float verticalInput = _joystick.Vertical;
 
-        _direction = new Vector3(horizontalInput, 0, verticalInput).normalized;
+        _direction = new Vector3(horizontalInput, 0, verticalInput);
+        _direction = transform.TransformDirection(_direction).normalized;
 
         if (_direction.magnitude >= 0.1f)
         {
-            OnStartMovingAnimation?.Invoke(this, EventArgs.Empty);
+            OnStartMoving?.Invoke(this, EventArgs.Empty);
         }
         else
         {
-            OnStartIdleAnimation?.Invoke(this, EventArgs.Empty);
+            OnStopMoving?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -44,9 +46,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (_groundChecker.IsGrounded())
+        if (_isGrounded)
         {
             _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        _isGrounded = false;
+        OnJumped?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        _isGrounded = true;
     }
 }
