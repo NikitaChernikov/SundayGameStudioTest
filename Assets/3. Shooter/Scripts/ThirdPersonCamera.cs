@@ -37,11 +37,9 @@ public class ThirdPersonCamera : MonoBehaviour
 
                 if (_aimRigTarget)
                 {
-                    // Calculate the target position based on camera rotation
                     Quaternion cameraRotation = Quaternion.Euler(rotCamera);
                     Vector3 targetPosition = transform.position + cameraRotation * _aimRigInitialOffset;
 
-                    // Update the aim target's position
                     _aimRigTarget.position = targetPosition;
                 }
             }
